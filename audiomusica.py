@@ -71,7 +71,7 @@ def predecir(df):
     X = df_dummies.drop(columns = 'transactions')
     Y = df_dummies['transactions']
 
-    modelo = pickle.load(open( "MODELO_FOR.sav", "rb" ))
+    modelo = pickle.load(open( "forest.sav", "rb" ))
 
     return df.assign(transactions_pred = modelo.predict(X))
 
